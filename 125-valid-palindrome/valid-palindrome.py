@@ -1,12 +1,12 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        clean_text = ''.join(char.lower() for char in s if char.isalnum())
-        left=0
-        right=len(clean_text)-1
-        while(left<right):
-            if(clean_text[left]!=clean_text[right]):
+        l=0
+        str=''.join(char.lower() for char in s if char.isalnum())
+        r=len(str)-1
+        while(l<=r):
+            if str[l]==str[r]:
+                l+=1
+                r-=1
+            else:
                 return False
-            left+=1
-            right-=1
         return True
-        
